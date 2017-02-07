@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div>
+        <h1>ASP MVC Layout Demo</h1>
+        <div id="divmenu" style="scrollbar-base-color: lemonchiffon; border : 1px solid black; color : white">
+            <a href="/home/CustomerData">Customer</a> ||
+            <a href="/home/ProductData">Product</a> ||
+            <a href="/home/DisplayPartialviews">Partial View Demo</a> ||
+            <a href="Employee/Index">Employee</a> ||
+            <a href="Department/Index">Department</a>
+        </div>
+    </div>
+    <div id="divtitle" style="font-weight:bolder;text-decoration:underline; text-align:center;color:coral">
+        @RenderSection("title",false)
+    </div>
+        @RenderBody()
+    <div id="divfooter" style="background-color: lightseagreen; border: 1px solid black; text-align:center; color:white">
+        &copy;  MVC Layout Demo @DateTime.Now.Year
+    </div>
+    
+</body>
+</html>

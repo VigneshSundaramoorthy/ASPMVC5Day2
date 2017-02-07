@@ -1,0 +1,24 @@
+﻿@model IEnumerable<MVC_LayoutDBDemo.Models.Customer>
+
+@{
+    ViewBag.Title = "CustomerData";    
+}
+
+<h2>CustomerData</h2>
+<table>
+    <tr>
+        <th>CustomerID</th>
+        <th>Customer Name</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.CustomerID</td>
+            <td>@item.CustomerName</td>
+        </tr>
+    }
+</table>
+@section title{
+    <h2>Customer Data</h2>
+}
+

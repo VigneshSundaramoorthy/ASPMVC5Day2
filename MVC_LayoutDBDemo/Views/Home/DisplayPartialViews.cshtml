@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "DisplayPartialViews";
+}
+
+<h2>DisplayPartialViews</h2>
+<table>
+    <tr>
+        <td>
+            <div>
+                @{ 
+                    Html.RenderAction("CustomerPartialDemo");
+                }
+            </div>
+        </td>
+        </tr>
+    <tr>
+        <td>
+            <div>
+                @{ 
+                    Html.RenderAction("ProductPartialDemo");
+                }
+            </div>
+        </td>
+    </tr>
+</table>
+@section title{
+    <h2>Partial Views</h2>
+}
+

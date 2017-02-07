@@ -1,0 +1,26 @@
+﻿@model IEnumerable< MVC_LayoutDBDemo.Models.Product>
+
+@{
+    ViewBag.Title = "ProductData";    
+}
+
+<h2>ProductData</h2>
+<table>
+    <tr>
+        <th>Product Id</th>
+        <th>Product Name</th>
+        <th>Product Price</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ProductID</td>
+            <td>@item.ProductName</td>
+            <td>@item.Price</td>
+        </tr>
+    }
+</table>
+@section title{
+    <h2>Product Data</h2>
+}
+
