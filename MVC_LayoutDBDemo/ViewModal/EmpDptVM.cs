@@ -15,20 +15,27 @@ namespace MVC_LayoutDBDemo.ViewwModal
 
         public int Age { get
             {
-                age = DateTime.Now.Year - Emp.BirthDate.Value.Year;
-                if(Emp.BirthDate > DateTime.Now.AddYears(-age))
+                if (Emp.BirthDate.HasValue)
                 {
-                    age--;
-                }
+                    age = DateTime.Now.Year - Emp.BirthDate.Value.Year;
+                    if (Emp.BirthDate > DateTime.Now.AddYears(-age))
+                    {
+                        age--;
+                    }
+                }                
                 return age;
             } }
 
         public string SalaryColor { get
             {
-                if (Emp.Salary > 25000)
-                    return "lightgreen";
-                else
-                    return "lightpink";
+                if (Emp.Salary.HasValue)
+                {
+                    if (Emp.Salary > 25000)
+                        return "lightgreen";
+                    else
+                        return "lightpink";
+                }
+                return "black";
             } }
     }
 }
