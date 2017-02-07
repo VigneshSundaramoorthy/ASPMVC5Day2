@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using MVC_LayoutDBDemo.Models;
 using System.Net;
+using MVC_LayoutDBDemo.ViewwModal;
 
 namespace MVC_LayoutDBDemo.Controllers
 {
@@ -86,6 +87,14 @@ namespace MVC_LayoutDBDemo.Controllers
             service.Employees.Remove(service.Employees.Find(id));
             service.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult ViewModalDemo()
+        {
+            IEnumerable<EmpDptVM> data = from e in service.Employees join d in service.Departments
+                                           on e.DeptID equals d.DeptID
+                                       select new EmpDptVM { Emp = e, Dept = d };
+            return View(data);
         }
 
         public ActionResult Index()

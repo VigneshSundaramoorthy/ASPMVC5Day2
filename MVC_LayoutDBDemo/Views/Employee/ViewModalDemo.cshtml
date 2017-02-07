@@ -1,0 +1,30 @@
+﻿@model IEnumerable<MVC_LayoutDBDemo.ViewwModal.EmpDptVM>
+
+@{
+    ViewBag.Title = "ViewModalDemo";
+}
+
+<h2>ViewModalDemo</h2>
+<table>
+    <tr>
+        <th>Employee ID</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Age</th>
+        <th>Salary</th>
+        <th>Department Name</th>
+        <th>Department Location</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Emp.EmpID</td>
+            <td>@item.Emp.FirstName</td>
+            <td>@item.Emp.LastName</td>
+            <td>@item.Age</td>
+            <td style="background-color: @item.SalaryColor">@item.Emp.Salary</td>
+            <td>@item.Dept.DeptName</td>
+            <td>@item.Dept.Location</td>
+        </tr>
+    }
+</table>
